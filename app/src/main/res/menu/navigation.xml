@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/donatorpage"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="DONATÖRER" />
+
+    <item
+        android:id="@+id/feedpage"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="FEED" />
+
+    <item
+        android:id="@+id/startpage"
+        android:icon="@drawable/runnning_man_icon"
+        android:title="START" />
+
+    <item
+        android:id="@+id/insamlatpage"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="INSAMLAT" />
+
+    <item
+        android:id="@+id/profilpage"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="PROFIL" />
+
+</menu>
