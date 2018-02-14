@@ -6,6 +6,7 @@
     android:background="#FF002b"
     android:minHeight="?attr/actionBarSize"
 
-    >
+    android:paddingBottom="14dp"
+    android:paddingTop="14dp">
 
 </android.support.v7.widget.Toolbar>

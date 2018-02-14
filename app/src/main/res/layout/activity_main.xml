@@ -34,6 +34,7 @@
         android:layout_height="56dp"
         android:background="@android:color/transparent"
         android:minHeight="?attr/actionBarSize"
-        />
+        android:paddingBottom="14dp"
+        android:paddingTop="10dp" />
 
 </android.support.constraint.ConstraintLayout>
