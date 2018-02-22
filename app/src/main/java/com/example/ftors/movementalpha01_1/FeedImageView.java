@@ -6,11 +6,10 @@ package com.example.ftors.movementalpha01_1;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.support.constraint.ConstraintLayout;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
@@ -74,10 +73,10 @@ public class FeedImageView extends android.support.v7.widget.AppCompatImageView 
      * Sets URL of the image that should be loaded into this view. Note that
      * calling this will immediately either set the cached image (if available)
      * or the default image specified by
-     * {@link VolleyImageView#setDefaultImageResId(int)} on the view.
+     * {link VolleyImageView#setDefaultImageResId(int)} on the view.
      *
-     * NOTE: If applicable, {@link VolleyImageView#setDefaultImageResId(int)}
-     * and {@link VolleyImageView#setErrorImageResId(int)} should be called
+     * NOTE: If applicable, {link VolleyImageView#setDefaultImageResId(int)}
+     * and {link VolleyImageView#setErrorImageResId(int)} should be called
      * prior to calling this function.
      *
      * @param url
@@ -119,8 +118,8 @@ public class FeedImageView extends android.support.v7.widget.AppCompatImageView 
         int height = getHeight();
 
         boolean isFullyWrapContent = getLayoutParams() != null
-                && getLayoutParams().height == LayoutParams.WRAP_CONTENT
-                && getLayoutParams().width == LayoutParams.WRAP_CONTENT;
+                && getLayoutParams().height == ConstraintLayout.LayoutParams.WRAP_CONTENT
+                && getLayoutParams().width == ConstraintLayout.LayoutParams.WRAP_CONTENT;
         // if the view's bounds aren't known yet, and this is not a
         // wrap-content/wrap-content
         // view, hold off on loading the image.
@@ -253,7 +252,7 @@ public class FeedImageView extends android.support.v7.widget.AppCompatImageView 
      * Adjusting imageview height
      * */
     private void adjustImageAspect(int bWidth, int bHeight) {
-        LinearLayout.LayoutParams params = (LayoutParams) getLayoutParams();
+        ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) getLayoutParams();
 
         if (bWidth == 0 || bHeight == 0)
             return;

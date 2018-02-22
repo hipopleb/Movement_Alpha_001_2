@@ -1,6 +1,7 @@
 package com.example.ftors.movementalpha01_1.Fragment;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,7 +52,7 @@ public class Tab2Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_tab2, container, false);
+        View rootView = inflater.inflate(R.layout.activity_main, container, false);
         listView = (ListView) rootView.findViewById(R.id.list);
         return rootView;
     }
@@ -69,14 +70,13 @@ public class Tab2Fragment extends Fragment {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
 
-        //listView = (ListView) findViewById(R.id.list);
+       // listView = (ListView) getActivity().findViewById(R.id.list);
 
         feedItems = new ArrayList<FeedItem>();
 
+        listView = new ListView(getContext());
         listAdapter = new FeedListAdapter(getActivity(), feedItems);
         listView.setAdapter(listAdapter);
-
-        new ColorDrawable(getResources().getColor(android.R.color.transparent));
 
         // We first check for cached request
         Cache cache = AppController.getInstance().getRequestQueue().getCache();
@@ -102,9 +102,8 @@ public class Tab2Fragment extends Fragment {
                 @Override
                 public void onResponse(JSONObject response) {
                     VolleyLog.d(TAG, "Response: " + response.toString());
-                    if (response != null) {
                         parseJsonFeed(response);
-                    }
+
                 }
             }, new Response.ErrorListener() {
 
